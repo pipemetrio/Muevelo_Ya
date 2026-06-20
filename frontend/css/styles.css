@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.navbar {
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    border-bottom: 3px solid #0a3466;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.brand-name {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+.brand-name img {
+    height: 20px;
+}
+
+.login-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    padding-bottom: 3px;
+    transition: 0.3s;
+}
+
+.login-link:hover {
+    border-bottom: 3px solid #0a3466;
+}
