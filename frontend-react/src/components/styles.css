@@ -12,7 +12,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 25px;
-    border-bottom: 3px solid #0a3466;
 }
 
 .logo-container {
@@ -46,5 +45,5 @@
 }
 
 .login-link:hover {
-    border-bottom: 3px solid #0a3466;
+    border-bottom: 3px solid #531151;
 }
