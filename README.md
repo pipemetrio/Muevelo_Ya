@@ -4,3 +4,5 @@ El azul usado en el proyecto esta siendo #0a3466
 El morado esta siendo #531151
 
 Pueden importar el Navbar asi como lo hice yo en App.jsx
+
+Cuando creen las otras paginas conectenla en el navbar (Navbar.jsx)
