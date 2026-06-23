@@ -1,7 +1,7 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Beneficios from "./components/Beneficios";
-import Footer from "./components/footer";
+import Navbar from "./components/navbar/Navbar";
+import Hero from "./components/hero/Hero";
+import Beneficios from "./components/beneficios/Beneficios";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
