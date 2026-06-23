@@ -1,6 +1,6 @@
-import "./styles.css"
-import logo from "../assets/images/MY_logo.png";
-import letras from "../assets/images/Letras.png";
+import "./Navbar.css"
+import logo from "../../assets/images/MY_logo.png";
+import letras from "../../assets/images/Letras.png";
 
 function Navbar() {
   return (
