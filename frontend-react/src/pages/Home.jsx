@@ -1,6 +1,8 @@
 import Navbar from "../components/layout/Navbar/Navbar";
 import Hero from "../components/home/Hero/Hero";
 import Benefits from "../components/home/Benefits/Benefits";
+import Services from "../components/home/Services/Services";
+import PQRSD from "../components/home/PQRSD/PQRSD";
 import Footer from "../components/layout/Footer/Footer";
 
 export default function Home() {
@@ -14,11 +16,12 @@ export default function Home() {
         <Benefits />
       </section>
       <section id="servicios">
-        <servicios />
+        <Services />
       </section>
       <section id="contacto">
-        <Footer />
+        <PQRSD />
       </section>
+      <Footer />
     </>
   );
 }

@@ -26,7 +26,7 @@ function Navbar() {
       <ul className="nav-links">
         <li>
           <button
-            className="nav-link active"
+            className="nav-link"
             onClick={() => scrollTo("inicio")}>
             Inicio
           </button>

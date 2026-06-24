@@ -18,7 +18,7 @@ function Hero() {
             conductores confiables de manera rápida y segura.
           </p>
 
-          <button className="hero-button">Solicitar Trasteo</button>
+          <button className="hero-button">Solicitar Mudanza</button>
 
           <div className="hero-features">
             <div className="feature">

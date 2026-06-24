@@ -48,7 +48,7 @@ export default function ProfileCard() {
       <div className="profile-stats">
         <div className="stat-card">
           <span className="stat-value">{user.trasteos}</span>
-          <span className="stat-label">Trasteos</span>
+          <span className="stat-label">Mudanzas</span>
         </div>
         <div className="stat-card">
           <span className="stat-value">{user.calificacion} ★</span>
