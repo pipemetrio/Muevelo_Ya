@@ -15,9 +15,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo-container">
-        <a href="/">
+        <Link to="/home">
           <img src={logo} alt="Logo MueveloYa" className="logo" />
-        </a>
+        </Link>
         <div className="brand-name">
           <img src={letras} alt="MueveloYa" />
         </div>

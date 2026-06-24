@@ -1,8 +1,10 @@
 import "./LoginForm.css";
 import logo from "../../../assets/images/MY_logo.png";
 import letras from "../../../assets/images/Letras.png";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  const navigate = useNavigate();
   return (
     <div className="login-page">
 
@@ -56,7 +58,9 @@ function LoginForm() {
               <a href="#" className="forgot-link">¿Olvidaste tu contraseña?</a>
             </div>
 
-            <button className="login-btn">Iniciar Sesión</button>
+            <button className="login-btn" onClick={() => navigate("/perfil")}>
+              Iniciar Sesión
+            </button>
 
             <p className="login-register">
               ¿No tienes cuenta? <a href="/register">Regístrate gratis</a>
