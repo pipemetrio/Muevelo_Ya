@@ -1,49 +1,166 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif;
-}
+/* ======================================
+   NAVBAR — Muévelo Ya
+====================================== */
 
 .navbar {
     height: 80px;
-    background-color: white;
+    background-color: #1A1A1A;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 25px;
+    padding: 0 50px;
+    border-bottom: 2px solid #FFC107;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
+/* ========================= */
+/* LOGO                      */
+/* ========================= */
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-    height: 50px;
+    height: 48px;
+    display: block;
 }
 
 .brand-name {
-    font-size: 2rem;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    color: #000;
+    display: flex;
+    align-items: center;
 }
 
 .brand-name img {
     height: 20px;
+    display: block;
 }
 
-.login-link {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #000;
+/* ========================= */
+/* LINKS DE NAVEGACIÓN       */
+/* ========================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #cccccc;
     text-decoration: none;
-    padding-bottom: 3px;
-    transition: 0.3s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #FFC107;
+}
+
+/* subrayado animado en hover */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: #FFC107;
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+    border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* link activo */
+.nav-link.active {
+    color: #FFC107;
+    font-weight: 700;
+}
+
+/* ========================= */
+/* BOTÓN INICIAR SESIÓN      */
+/* ========================= */
+
+.login-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FFC107;
+    color: #1A1A1A;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 11px 22px;
+    border-radius: 10px;
+    transition: background 0.25s ease, transform 0.25s ease;
+    white-space: nowrap;
 }
 
 .login-link:hover {
-    border-bottom: 3px solid #531151;
+    background-color: #E6AC00;
+    transform: translateY(-2px);
+}
+
+.login-icon {
+    font-size: 1rem;
+}
+
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        gap: 12px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 4px;
+        padding-bottom: 8px;
+    }
+
+    .nav-link {
+        font-size: 0.88rem;
+        padding: 6px 12px;
+    }
+}
+
+
+/* botones de navegación — se ven igual que links */
+.nav-links button.nav-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95rem;
 }

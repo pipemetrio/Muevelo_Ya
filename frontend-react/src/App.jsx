@@ -7,9 +7,15 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Beneficios />
-      <Footer />
+      <section id="inicio">
+        <Hero />
+      </section>
+      <section id="servicios">
+        <Beneficios />
+      </section>
+      <section id="contacto">
+        <Footer />
+      </section>
     </>
   );
 }
