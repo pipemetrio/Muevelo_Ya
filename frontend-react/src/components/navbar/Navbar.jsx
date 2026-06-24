@@ -30,6 +30,11 @@ function Navbar() {
           </button>
         </li>
         <li>
+          <button className="nav-link" onClick={() => scrollTo("beneficios")}>
+            Beneficios
+          </button>
+        </li>
+        <li>
           <button className="nav-link" onClick={() => scrollTo("servicios")}>
             Servicios
           </button>

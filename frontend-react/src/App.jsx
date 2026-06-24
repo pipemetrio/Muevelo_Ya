@@ -10,8 +10,11 @@ function App() {
       <section id="inicio">
         <Hero />
       </section>
-      <section id="servicios">
+      <section id="beneficios">
         <Beneficios />
+      </section>
+      <section id="servicios">
+        <servicios />
       </section>
       <section id="contacto">
         <Footer />
