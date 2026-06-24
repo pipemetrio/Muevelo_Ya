@@ -17,9 +17,11 @@
     letter-spacing: -0.3px;
 }
 
-/* palabra destacada en el título */
 .benefits-highlight {
     color: #FFC107;
+    text-decoration: underline;
+    text-decoration-color: #FFC107;
+    text-underline-offset: 6px;
 }
 
 /* ========================= */

@@ -3,6 +3,7 @@ import Hero from "./components/hero/Hero";
 import Beneficios from "./components/beneficios/Beneficios";
 import Footer from "./components/footer/Footer";
 import Servicios from "./components/servicios/SERVICIOS";
+import PQRSD from "./components/pqrsd/PQRSD";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       </section>
       <section id="servicios">
         <Servicios />
+      </section>
+      <section id="pqrsd">
+        <PQRSD />
       </section>
       <section id="contacto">
         <Footer />
