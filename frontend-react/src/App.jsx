@@ -2,6 +2,7 @@ import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
 import Beneficios from "./components/beneficios/Beneficios";
 import Footer from "./components/footer/Footer";
+import Servicios from "./components/servicios/SERVICIOS";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Beneficios />
       </section>
       <section id="servicios">
-        <servicios />
+        <Servicios />
       </section>
       <section id="contacto">
         <Footer />
