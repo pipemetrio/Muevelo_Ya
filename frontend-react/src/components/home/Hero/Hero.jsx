@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import "./Hero.css";
 import foto from "../../../assets/images/Hero.png";
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="hero">
       <div className="hero-left">
@@ -18,7 +21,9 @@ function Hero() {
             conductores confiables de manera rápida y segura.
           </p>
 
-          <button className="hero-button">Solicitar Mudanza</button>
+          <button className="hero-button" onClick={() => navigate("/solicitar")}>
+            Solicitar servicio
+          </button>
 
           <div className="hero-features">
             <div className="feature">

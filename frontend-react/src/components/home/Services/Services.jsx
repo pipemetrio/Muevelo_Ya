@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./Services.css";
 
 const servicios = [
   {
+    id: "trasteo",
     icon: "🏠",
     tag: "Más solicitado",
     title: "Trasteos",
@@ -9,6 +11,7 @@ const servicios = [
     items: ["Carga y descarga incluida", "Embalaje básico", "Seguro de trayecto"],
   },
   {
+    id: "envio",
     icon: "📦",
     tag: "Rápido y seguro",
     title: "Envíos",
@@ -16,6 +19,7 @@ const servicios = [
     items: ["Atención ágil", "Seguimiento en tiempo real", "Confirmación de recibido y entregado"],
   },
   {
+    id: "mudanza",
     icon: "🚚",
     tag: "Hogares y empresas",
     title: "Mudanzas",
@@ -25,6 +29,8 @@ const servicios = [
 ];
 
 function Servicios() {
+  const navigate = useNavigate();
+
   return (
     <section className="servicios">
 
@@ -49,7 +55,9 @@ function Servicios() {
                 <li key={j}><span className="servicio-check">✦</span>{item}</li>
               ))}
             </ul>
-            <button className="servicio-btn">Solicitar {s.title}</button>
+            <button className="servicio-btn" onClick={() => navigate(`/solicitar?servicio=${s.id}`)}>
+              Solicitar {s.title}
+            </button>
           </div>
         ))}
       </div>

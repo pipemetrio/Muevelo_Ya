@@ -1,0 +1,1205 @@
+/* ======================================
+   SOLICITAR SERVICIO — Muévelo Ya
+   Estilo: fondo negro, tarjetas #1a1a1a, acentos #FFC107
+====================================== */
+
+.solicitar {
+    background: #111111;
+    min-height: calc(100vh - 80px);
+    padding: 70px 6% 90px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+/* ========================= */
+/* HEADER                    */
+/* ========================= */
+
+.solicitar-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.solicitar-eyebrow {
+    display: inline-block;
+    color: #FFC107;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    border: 1.5px solid #FFC107;
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+.solicitar-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 900;
+    margin: 18px 0 14px;
+}
+
+.solicitar-highlight {
+    color: #FFC107;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.solicitar-header p {
+    color: #999999;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.solicitar-roles {
+    display: inline-flex;
+    margin-top: 30px;
+    background: #1a1a1a;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 50px;
+    padding: 5px;
+    gap: 4px;
+}
+
+.solicitar-rol {
+    background: transparent;
+    border: none;
+    color: #cccccc;
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+}
+
+.solicitar-rol:hover {
+    color: #FFC107;
+}
+
+.solicitar-rol--activo,
+.solicitar-rol--activo:hover {
+    background: #FFC107;
+    color: #111111;
+}
+
+.solicitar-pestana {
+    display: block;
+    margin-top: 14px;
+    color: #777777;
+    font-size: 0.8rem;
+}
+
+.solicitar-pestana:hover {
+    color: #FFC107;
+}
+
+.solicitar-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ========================= */
+/* TARJETA BASE              */
+/* ========================= */
+
+.sol-card {
+    background: #1a1a1a;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 18px;
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.sol-centro {
+    align-items: center;
+    text-align: center;
+}
+
+.sol-seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sol-titulo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+}
+
+.sol-ayuda {
+    color: #888888;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.sol-error {
+    color: #ff6b6b;
+    font-size: 0.88rem;
+}
+
+.sol-error-msg {
+    color: #ff6b6b;
+    font-size: 0.78rem;
+}
+
+/* ========================= */
+/* PASOS                     */
+/* ========================= */
+
+.sol-pasos {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 22px;
+}
+
+.sol-paso {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666666;
+    font-size: 0.85rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+.sol-paso:not(:last-child)::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: #2a2a2a;
+    border-radius: 2px;
+}
+
+.sol-paso-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.sol-paso--activo {
+    color: #FFC107;
+}
+
+.sol-paso--activo .sol-paso-num {
+    border-color: #FFC107;
+    background: rgba(255, 193, 7, 0.12);
+}
+
+.sol-paso--hecho {
+    color: #cccccc;
+}
+
+.sol-paso--hecho .sol-paso-num {
+    background: #FFC107;
+    border-color: #FFC107;
+    color: #111111;
+}
+
+.sol-paso--hecho::after {
+    background: #FFC107 !important;
+}
+
+/* ========================= */
+/* PASO 1 — SERVICIOS        */
+/* ========================= */
+
+.sol-servicios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.sol-servicio,
+.sol-modalidad {
+    background: #141414;
+    border: 2px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 24px 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+    color: #ffffff;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.sol-servicio:hover,
+.sol-modalidad:hover {
+    border-color: #FFC107;
+    transform: translateY(-4px);
+}
+
+.sol-servicio--activo,
+.sol-modalidad--activa {
+    border-color: #FFC107;
+    background: rgba(255, 193, 7, 0.08);
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.12);
+}
+
+.sol-servicio-icon,
+.sol-modalidad-icon {
+    font-size: 2.2rem;
+}
+
+.sol-servicio strong,
+.sol-modalidad strong {
+    font-size: 1.1rem;
+}
+
+.sol-servicio-desc,
+.sol-modalidad span:last-child {
+    color: #888888;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.sol-servicio-meta {
+    color: #aaaaaa;
+    font-size: 0.78rem;
+}
+
+.sol-servicio-precio {
+    margin-top: auto;
+    color: #FFC107;
+    font-weight: 800;
+}
+
+.sol-servicio-precio small {
+    color: #aaaaaa;
+    font-weight: 600;
+}
+
+/* ========================= */
+/* PASO 2 — RUTA             */
+/* ========================= */
+
+.sol-puntos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.sol-punto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #141414;
+    border: 2px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 16px;
+    transition: border-color 0.2s;
+}
+
+.sol-punto--activo {
+    border-color: #FFC107;
+}
+
+.sol-punto-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sol-punto-ok {
+    margin-left: auto;
+    color: #4cd964;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.sol-punto-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sol-punto-campos .sol-btn {
+    align-self: flex-start;
+}
+
+.sol-punto-msg {
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+
+.sol-punto-msg--ok { color: #4cd964; }
+.sol-punto-msg--aviso { color: #FFC107; }
+.sol-punto-msg--error { color: #ff6b6b; }
+
+.sol-resultados {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sol-resultados button {
+    width: 100%;
+    text-align: left;
+    background: #111111;
+    border: 1.5px solid #333333;
+    border-radius: 8px;
+    padding: 9px 12px;
+    color: #dddddd;
+    font-size: 0.82rem;
+    cursor: pointer;
+}
+
+.sol-resultados button:hover {
+    border-color: #FFC107;
+    color: #FFC107;
+}
+
+.sol-punto-letra {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.sol-punto-letra--origen {
+    background: #FFC107;
+    color: #111111;
+}
+
+.sol-punto-letra--destino {
+    background: #111111;
+    color: #FFC107;
+    border: 2px solid #FFC107;
+}
+
+.sol-distancia {
+    color: #aaaaaa;
+    font-size: 0.88rem;
+}
+
+.sol-distancia strong {
+    color: #FFC107;
+}
+
+/* ========================= */
+/* PASO 3 — MODALIDAD        */
+/* ========================= */
+
+.sol-modalidades {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* ========================= */
+/* INPUTS                    */
+/* ========================= */
+
+.sol-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.sol-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sol-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #cccccc;
+}
+
+.sol-card input[type="text"],
+.sol-card input[type="tel"],
+.sol-card input[type="datetime-local"],
+.sol-card textarea {
+    background: #111111;
+    border: 1.5px solid #333333;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-family: inherit;
+    width: 100%;
+    transition: border-color 0.2s;
+    color-scheme: dark;
+}
+
+.sol-card input:focus,
+.sol-card textarea:focus {
+    outline: none;
+    border-color: #FFC107;
+}
+
+.sol-card input:disabled {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.sol-card textarea {
+    resize: vertical;
+}
+
+.sol-input-error {
+    border-color: #ff6b6b !important;
+}
+
+/* ========================= */
+/* PASO 4 — EXTRAS           */
+/* ========================= */
+
+.sol-extras {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sol-extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: #141414;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+
+.sol-extra > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sol-extra span {
+    color: #888888;
+    font-size: 0.8rem;
+}
+
+.sol-extra--check {
+    cursor: pointer;
+}
+
+.sol-extra--check input {
+    width: 22px;
+    height: 22px;
+    accent-color: #FFC107;
+    cursor: pointer;
+}
+
+.sol-contador {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sol-contador button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid #FFC107;
+    background: transparent;
+    color: #FFC107;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.sol-contador button:hover {
+    background: #FFC107;
+    color: #111111;
+}
+
+.sol-contador span {
+    color: #ffffff !important;
+    font-weight: 800;
+    font-size: 1rem !important;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* ========================= */
+/* RESUMEN                   */
+/* ========================= */
+
+.sol-resumen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.sol-resumen-datos,
+.tra-detalle-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sol-resumen-datos p,
+.tra-detalle-info p {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.92rem;
+    color: #dddddd;
+    line-height: 1.45;
+}
+
+.sol-resumen-datos p span,
+.tra-detalle-info p span {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #777777;
+    font-weight: 700;
+}
+
+/* ========================= */
+/* PRECIO                    */
+/* ========================= */
+
+.sol-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 193, 7, 0.07);
+    border: 1.5px solid rgba(255, 193, 7, 0.35);
+    border-radius: 14px;
+    padding: 16px 22px;
+}
+
+.sol-precio-detalle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    color: #aaaaaa;
+    font-size: 0.82rem;
+}
+
+.sol-precio-total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    white-space: nowrap;
+}
+
+.sol-precio-total span {
+    color: #aaaaaa;
+    font-size: 0.78rem;
+}
+
+.sol-precio-total strong {
+    color: #FFC107;
+    font-size: 1.5rem;
+}
+
+/* ========================= */
+/* BOTONES                   */
+/* ========================= */
+
+.sol-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sol-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #FFC107;
+    color: #111111;
+    border: 1.5px solid #FFC107;
+    padding: 13px 30px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.sol-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(255, 193, 7, 0.35);
+}
+
+.sol-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.sol-btn--sec {
+    background: transparent;
+    color: #FFC107;
+}
+
+.sol-btn--peligro {
+    background: transparent;
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.sol-btn--peligro:hover:not(:disabled) {
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.sol-btn--chico {
+    padding: 8px 18px;
+    font-size: 0.82rem;
+}
+
+.sol-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2.5px solid rgba(17, 17, 17, 0.3);
+    border-top-color: #111111;
+    border-radius: 50%;
+    animation: sol-giro 0.8s linear infinite;
+    display: inline-block;
+}
+
+.sol-spinner--grande {
+    width: 38px;
+    height: 38px;
+    border-width: 4px;
+    border-color: rgba(255, 193, 7, 0.2);
+    border-top-color: #FFC107;
+    flex-shrink: 0;
+}
+
+@keyframes sol-giro {
+    to { transform: rotate(360deg); }
+}
+
+/* ========================= */
+/* SEGUIMIENTO               */
+/* ========================= */
+
+.seg-id {
+    color: #777777;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.seg-header .sol-titulo {
+    margin: 6px 0;
+}
+
+.seg-buscando {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    background: #141414;
+    border: 1.5px dashed #FFC107;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.seg-buscando p {
+    color: #888888;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    line-height: 1.55;
+}
+
+.seg-conductor {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #141414;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 16px 20px;
+}
+
+.seg-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #FFC107;
+    color: #111111;
+    font-weight: 900;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.seg-conductor-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.seg-conductor-info span {
+    color: #888888;
+    font-size: 0.85rem;
+}
+
+.seg-aviso {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: rgba(255, 193, 7, 0.08);
+    border: 1.5px solid rgba(255, 193, 7, 0.35);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    color: #dddddd;
+    cursor: default;
+}
+
+.seg-aviso--error {
+    background: rgba(255, 107, 107, 0.08);
+    border-color: rgba(255, 107, 107, 0.4);
+}
+
+.seg-timeline {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.seg-hito {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #666666;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.seg-hito::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -50%;
+    width: 100%;
+    height: 3px;
+    background: #2a2a2a;
+    z-index: 0;
+}
+
+.seg-hito:first-child::before {
+    display: none;
+}
+
+.seg-hito-punto {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #2a2a2a;
+    border: 3px solid #1a1a1a;
+    position: relative;
+    z-index: 1;
+}
+
+.seg-hito--hecho,
+.seg-hito--actual {
+    color: #ffffff;
+}
+
+.seg-hito--hecho::before,
+.seg-hito--actual::before {
+    background: #FFC107;
+}
+
+.seg-hito--hecho .seg-hito-punto {
+    background: #FFC107;
+}
+
+.seg-hito--actual .seg-hito-punto {
+    background: #FFC107;
+    box-shadow: 0 0 0 5px rgba(255, 193, 7, 0.3);
+    animation: vehiculo-pulso 1.6s ease-in-out infinite;
+}
+
+.seg-direcciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.seg-direcciones p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.seg-final {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    color: #cccccc;
+}
+
+.seg-estrellas button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #444444;
+    cursor: pointer;
+    transition: transform 0.15s, color 0.15s;
+}
+
+.seg-estrellas button:hover {
+    transform: scale(1.15);
+}
+
+.seg-estrellas .seg-estrella--activa {
+    color: #FFC107;
+}
+
+/* ========================= */
+/* MIS SOLICITUDES           */
+/* ========================= */
+
+.mis-solicitudes {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mis-solicitudes h3 {
+    font-size: 1rem;
+    color: #aaaaaa;
+    margin-bottom: 4px;
+}
+
+.mis-solicitud {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #1a1a1a;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 12px 18px;
+    color: #ffffff;
+    font-size: 0.88rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.mis-solicitud:hover,
+.mis-solicitud--activa {
+    border-color: #FFC107;
+}
+
+.mis-solicitud-destino {
+    flex: 1;
+    color: #888888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ========================= */
+/* PANEL TRANSPORTISTA       */
+/* ========================= */
+
+.tra-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tra-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.tra-stat {
+    background: #1a1a1a;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tra-stat strong {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.tra-stat span {
+    color: #888888;
+    font-size: 0.8rem;
+}
+
+.tra-stat--destacado {
+    border-color: #FFC107;
+}
+
+.tra-stat--destacado strong {
+    color: #FFC107;
+}
+
+.tra-cerrar {
+    margin-left: auto;
+    cursor: pointer;
+    color: #888888;
+}
+
+.tra-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 12px;
+}
+
+.tra-tab {
+    background: transparent;
+    border: 1.5px solid #2a2a2a;
+    color: #cccccc;
+    padding: 9px 18px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.tra-tab:hover {
+    border-color: #FFC107;
+    color: #FFC107;
+}
+
+.tra-tab--activa,
+.tra-tab--activa:hover {
+    background: #FFC107;
+    border-color: #FFC107;
+    color: #111111;
+}
+
+.tra-reiniciar {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #777777;
+    font-size: 0.82rem;
+    cursor: pointer;
+}
+
+.tra-reiniciar:hover {
+    color: #FFC107;
+}
+
+.tra-contenido {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.tra-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 720px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.tra-item {
+    background: #1a1a1a;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+    color: #ffffff;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.tra-item:hover,
+.tra-item--activo {
+    border-color: #FFC107;
+}
+
+.tra-item-top,
+.tra-item-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.tra-item-bottom {
+    color: #888888;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+.tra-item-bottom strong {
+    color: #FFC107;
+    font-size: 1rem;
+}
+
+.tra-badge {
+    font-size: 0.72rem;
+    color: #cccccc;
+    background: #2a2a2a;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.tra-badge--ya {
+    color: #111111;
+    background: #FFC107;
+}
+
+.tra-estado {
+    font-size: 0.72rem;
+    color: #FFC107;
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    padding: 2px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.tra-ruta {
+    display: flex;
+    gap: 8px;
+    color: #aaaaaa;
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.tra-ruta span {
+    color: #FFC107;
+    font-weight: 900;
+}
+
+.tra-detalle {
+    background: #1a1a1a;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tra-vacio {
+    color: #777777;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+
+@media (max-width: 1000px) {
+    .sol-servicios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .sol-resumen,
+    .tra-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .tra-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sol-paso-nombre {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .solicitar {
+        padding: 50px 16px 70px;
+    }
+
+    .solicitar-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .solicitar-rol {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    .sol-card {
+        padding: 22px 16px;
+    }
+
+    .sol-servicios,
+    .sol-puntos,
+    .sol-modalidades,
+    .sol-row {
+        grid-template-columns: 1fr;
+    }
+
+    .sol-precio {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sol-precio-total {
+        align-items: flex-start;
+    }
+
+    .seg-timeline {
+        font-size: 0.7rem;
+    }
+
+    .seg-conductor {
+        flex-wrap: wrap;
+    }
+}

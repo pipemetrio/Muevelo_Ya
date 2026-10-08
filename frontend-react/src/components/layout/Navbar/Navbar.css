@@ -145,6 +145,7 @@
         order: 3;
         width: 100%;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 4px;
         padding-bottom: 8px;
     }
@@ -163,4 +164,18 @@
     cursor: pointer;
     font-family: inherit;
     font-size: 0.95rem;
+}
+/* link destacado: Solicitar servicio */
+.nav-link--cta {
+    color: #FFC107;
+    border: 1.5px solid #FFC107;
+    margin-left: 6px;
+}
+
+.nav-link--cta:hover {
+    background: rgba(255, 193, 7, 0.1);
+}
+
+.nav-link--cta::after {
+    display: none;
 }
