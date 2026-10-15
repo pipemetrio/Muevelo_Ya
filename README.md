@@ -5,7 +5,7 @@
 **Muévelo Ya: Plataforma Web para la Solicitud de Servicios de Acarreo en Medellín**
 
 Andrés Felipe Vargas Metrio, Sebastián Ramírez Castrillón, Sergio Andrés López Sepúlveda,
-[Nombre completo — usuario JOELBUR10] y [Nombre completo — usuario JuansseVelez]
+Joel Andrés Mendoza Buriticá y Juan Sebastián Ramírez Velez
 
 Servicio Nacional de Aprendizaje (SENA)
 
