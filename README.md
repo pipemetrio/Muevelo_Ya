@@ -9,11 +9,9 @@ Joel Andrés Mendoza Buriticá y Juan Sebastián Ramírez Velez
 
 Servicio Nacional de Aprendizaje (SENA)
 
-[Programa de formación] — Ficha [número]
+ADSO — Ficha 3169892
 
 Proyecto de grado
-
-[Nombre del instructor]
 
 Octubre de 2026
 
